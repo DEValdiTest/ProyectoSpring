@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ProyectoSpring
+  data:
+    mongodb:
+      uri: mongodb+srv://user-client-dig-dev:UZZ6K7QAGLbfSExX@fp-dqu-ti-mongo.m7oab.mongodb.net/client-dig-dev?retryWrites=true&w=majority
