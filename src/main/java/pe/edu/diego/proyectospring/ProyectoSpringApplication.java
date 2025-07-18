@@ -10,4 +10,8 @@ public class ProyectoSpringApplication {
         SpringApplication.run(ProyectoSpringApplication.class, args);
     }
 
+    public void metodo1(){
+        //logica que tendra el metodo 1
+    }
+
 }
