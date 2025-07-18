@@ -14,4 +14,8 @@ public class ProyectoSpringApplication {
         //logica del metodo 2
     }
 
+    public void metodo3(){
+        //logica del metodo 3
+    }
+
 }
