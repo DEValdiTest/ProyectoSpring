@@ -1,4 +1,4 @@
-package pe.edu.diego.proyectospring.infraestructura.collection;
+package pe.edu.diego.proyectospring.infraestructura.outbound.database.collection;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

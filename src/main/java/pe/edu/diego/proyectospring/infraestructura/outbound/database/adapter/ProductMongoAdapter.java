@@ -1,9 +1,9 @@
-package pe.edu.diego.proyectospring.infraestructura.adapter;
+package pe.edu.diego.proyectospring.infraestructura.outbound.database.adapter;
 
 import org.springframework.stereotype.Component;
 import pe.edu.diego.proyectospring.domain.model.Product;
 import pe.edu.diego.proyectospring.domain.port.ProductRepositoryPort;
-import pe.edu.diego.proyectospring.infraestructura.repository.ProductRepository;
+import pe.edu.diego.proyectospring.infraestructura.outbound.database.repository.ProductRepository;
 import reactor.core.publisher.Mono;
 
 @Component
