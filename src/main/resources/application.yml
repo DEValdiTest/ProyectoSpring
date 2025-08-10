@@ -1,6 +1,9 @@
 spring:
   application:
     name: ProyectoSpring
+  data:
+    mongodb:
+      uri: mongodb+srv://user-growth-dev:3Em6WjDzX7MYBHZ@fp-dqu-digital-mongo.aohi9.mongodb.net/master-dev?retryWrites=true&w=majority
 
 #  datasource:
 #    url: jdbc:mysql://localhost:3306/sys?autoReconnect=true&useSSL=false&serverTimezone=America/Lima
