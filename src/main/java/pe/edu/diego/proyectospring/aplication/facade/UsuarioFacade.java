@@ -5,6 +5,7 @@ import pe.edu.diego.proyectospring.aplication.factory.NotificationFactory;
 import pe.edu.diego.proyectospring.aplication.service.NotificationService;
 import pe.edu.diego.proyectospring.domain.model.AddUsuarioRequest;
 import pe.edu.diego.proyectospring.domain.model.AddUsuarioResponse;
+import pe.edu.diego.proyectospring.domain.model.NotificationRequest;
 import pe.edu.diego.proyectospring.domain.model.Product;
 import pe.edu.diego.proyectospring.domain.port.ProductRepositoryPort;
 import reactor.core.publisher.Mono;
@@ -47,8 +48,8 @@ public class UsuarioFacade {
 
     }
 
-    public void sendMessage(String type, String message){
-        NotificationService service = notificationFactory.getNotificationService(type);
-        service.sendNotification(message);
+    public Mono<Void> sendMessage(NotificationRequest request){
+        NotificationService service = notificationFactory.getNotificationService(request.getType());
+        return service.sendNotification(request.getMessage());
     }
 }

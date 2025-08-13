@@ -1,7 +1,9 @@
 package pe.edu.diego.proyectospring.aplication.service;
 
+import reactor.core.publisher.Mono;
+
 public interface NotificationService {
 
-    void sendNotification(String message);
+    Mono<Void> sendNotification(String message);
 
 }
