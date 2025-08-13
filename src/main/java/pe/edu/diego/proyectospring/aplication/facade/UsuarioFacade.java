@@ -1,6 +1,8 @@
 package pe.edu.diego.proyectospring.aplication.facade;
 
 import org.springframework.stereotype.Service;
+import pe.edu.diego.proyectospring.aplication.factory.NotificationFactory;
+import pe.edu.diego.proyectospring.aplication.service.NotificationService;
 import pe.edu.diego.proyectospring.domain.model.AddUsuarioRequest;
 import pe.edu.diego.proyectospring.domain.model.AddUsuarioResponse;
 import pe.edu.diego.proyectospring.domain.model.Product;
@@ -12,8 +14,10 @@ public class UsuarioFacade {
 
     private final ProductRepositoryPort productRepositoryPort;
 
-    public UsuarioFacade(ProductRepositoryPort productRepositoryPort) {
+    private final NotificationFactory notificationFactory;
+    public UsuarioFacade(ProductRepositoryPort productRepositoryPort, NotificationFactory notificationFactory) {
         this.productRepositoryPort = productRepositoryPort;
+        this.notificationFactory = notificationFactory;
     }
 
     public Mono<AddUsuarioRequest> addProduct(AddUsuarioRequest request){
@@ -27,7 +31,7 @@ public class UsuarioFacade {
        /* AddUsuarioResponse response = new AddUsuarioResponse();
         response.setRespuesta(userid+" Get");*/
         System.out.println("goku : " + userid);
-        return productRepositoryPort.findBySkuInka:farma(userid);
+        return productRepositoryPort.findBySkuInkafarma(userid);
 
     }
 
@@ -41,5 +45,10 @@ public class UsuarioFacade {
         request.setUserId(request.getUserId()+" Update");
         return Mono.just(request);
 
+    }
+
+    public void sendMessage(String type, String message){
+        NotificationService service = notificationFactory.getNotificationService(type);
+        service.sendNotification(message);
     }
 }
