@@ -11,7 +11,7 @@ public class UsuarioController {
     public Usuario obtenerUsuario() {
         Usuario usuario = new Usuario();
         usuario.setId(1);
-        usuario.setNombre("Usuario 1");
+        usuario.setNombre("Usuario 12");
 
         return usuario;
     }
