@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ProyectoSpring
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/sys?autoReconnect=true&useSSL=false&serverTimezone=America/Lima
+    username: root
+    password: 0153Mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver

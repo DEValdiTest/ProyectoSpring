@@ -1,6 +1,10 @@
 package pe.edu.diego.proyectospring.infraestructura.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+/*
+import javax.persistence.*;*/
 import java.util.List;
 
 @Entity
@@ -12,6 +16,8 @@ public class User {
     private Long id;
 
     @Column(unique = true)
+    @NotBlank
+    @Size(min = 4, max = 12)
     private String userName;
 
     private String password;
@@ -26,6 +32,9 @@ public class User {
             }
     )
     private List<Role> roles;
+
+    @Transient
+    private boolean admin;
 
     public String getUserName() {
         return userName;
@@ -49,5 +58,13 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
